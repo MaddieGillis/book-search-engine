@@ -1,3 +1,7 @@
+//Commented out old code for refactor, keeping it just in case
+
+
+
 // const router = require('express').Router();
 // const path = require('path');
 // const apiRoutes = require('./api');
