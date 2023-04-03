@@ -13,17 +13,21 @@ const server = new ApolloServer({
   resolvers,
   context: authMiddleware
 });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/'));
+});
 
 async function startApolloServer() {
   await server.start();
   server.applyMiddleware({ app });
+  
 }
 
 startApolloServer();
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
@@ -31,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  res.sendFile(path.join(__dirname, '../client/'));
 });
 
 db.once('open', () => {
