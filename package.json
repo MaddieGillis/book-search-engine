@@ -4,6 +4,7 @@
   "description": "",
   "homepage": "maddiegillis.gihub.io/book-search-engine",
   "main": "server/server.js",
+  "proxy": "http://localhost:3001",
   "scripts": {
     "predeploy": "npm run build",
    "deploy": "gh-pages -d build",
