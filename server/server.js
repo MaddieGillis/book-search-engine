@@ -24,26 +24,26 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/'));
+});
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-// async function startApolloServer() {
-//   await server.start();
-//   server.applyMiddleware({ app });
+async function startApolloServer(typeDefs, resolvers) {
+  await server.start();
+  server.applyMiddleware({ app });
+  db.once('open', () => {
+    app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
+    console.log(`GraphQL ready at http://localhost:${PORT}${server.graphqlPath}`)
+  });
   
-// }
+}
 
-// startApolloServer();
+startApolloServer(typeDefs, resolvers);
 
 
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, '../client/'));
-// });
 
-db.once('open', () => {
-  app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
-  console.log(`GraphQL ready at http://localhost:${PORT}${server.graphqlPath}`)
-});
