@@ -36,18 +36,24 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ## Usage
 
-https://maddiegillis.github.io/book-search-engine/
+https://damp-depths-76329.herokuapp.com/
 
 ![image](https://user-images.githubusercontent.com/112782694/229414768-48554170-ea07-4d3d-87e6-fccc2c46393b.png)
 
 ## Credits
 
 Apollo documentation
+
 Royce from AskBCS
+
 Chatgpt for debugging
+
 https://github.com/gitname/react-gh-pages
+
 Special thank you to John Titus from the tutoring service for working hard and staying extra to help debug.
+
 Special thank you to Jerromy from AskBCS for spending nearly 2 hours helping me debug my log in issues.
+
 Special thank you to Ntando from AskBCS for spending hours helping me to get the app to deploy to heroku.
 
 ## License
