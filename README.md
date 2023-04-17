@@ -46,6 +46,8 @@ Apollo documentation
 Royce from AskBCS
 Chatgpt for debugging
 https://github.com/gitname/react-gh-pages
+Special thank you to John Titus from the tutoring service for working hard and staying extra to help debug.
+Special thank you to Jerromy from AskBCS for spending nearly 2 hours helping me debug my log in issues.
 
 ## License
 
