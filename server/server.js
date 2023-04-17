@@ -5,8 +5,11 @@ const { typeDefs, resolvers } = require("./schemas");
 const db = require('./config/connection');
 const { authMiddleware } = require('./utils/auth');
 
+
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/your-database-name');
 
 const server = new ApolloServer({
   typeDefs,
