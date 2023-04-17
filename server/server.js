@@ -36,7 +36,8 @@ async function startApolloServer(typeDefs, resolvers) {
   server.applyMiddleware({ app });
   db.once('open', () => {
     app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
-    console.log(`GraphQL ready at http://localhost:${PORT}${server.graphqlPath}`)
+    console.log(`GraphQL ready at http://localhost:${PORT}${server.graphqlPath}`);
+    console.log(`Please work I really need to pass`);
   });
   
 }
